@@ -77,7 +77,7 @@ The application follows a modular Multi-Agent workflow.
 -   Generates answers only from retrieved context.
 
 ------------------------------------------------------------------------
-# 🏗️ System Architecture Diagram
+#  System Architecture Diagram
 
 ``` text
                 User
