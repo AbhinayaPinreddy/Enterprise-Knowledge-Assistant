@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import api from "../api/api";
 import toast, { Toaster } from "react-hot-toast";
 
 function Register() {
@@ -23,11 +23,7 @@ function Register() {
     setLoading(true);
 
     try {
-
-      await axios.post(
-        "http://127.0.0.1:8000/auth/register",
-        form
-      );
+      await api.post("/auth/register", form);
 
       toast.success("Registration Successful");
 
