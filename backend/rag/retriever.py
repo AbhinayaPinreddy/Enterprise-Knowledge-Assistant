@@ -64,6 +64,14 @@ def retrieve(query, category, top_k=20):
             print(chunk["page"])
             print(chunk["text"][:200])
             print("----------------")
+        print("=" * 60)
+        print("Retrieved Chunks:", len(results))
+
+        for r in results:
+            print("Score:", r["score"])
+            print("Page:", r["page"])
+            print(r["text"][:300])
+            print("-" * 40)
 
         return results
 
