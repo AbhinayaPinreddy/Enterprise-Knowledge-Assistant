@@ -20,7 +20,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://enterprise-knowledge-assistant-kom0hr84c-enterpriseassistant.vercel.app",
+        "https://enterprise-knowledge-assistant-three.vercel.app/",
     ],
     allow_credentials=True,
     allow_methods=["*"],
