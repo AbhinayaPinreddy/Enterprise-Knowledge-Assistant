@@ -13,8 +13,30 @@ export const deleteDocument = async (id) => {
 };
 
 // Download
-export const downloadDocument = (id) => {
-    window.open(`${import.meta.env.VITE_API_URL}/documents/download/${id}`);
+// Download
+export const downloadDocument = async (id) => {
+
+    const response = await api.get(
+        `/documents/download/${id}`,
+        {
+            responseType: "blob",
+        }
+    );
+
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "document.pdf";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    link.remove();
+
+    window.URL.revokeObjectURL(url);
 };
 
 // Upload Document
