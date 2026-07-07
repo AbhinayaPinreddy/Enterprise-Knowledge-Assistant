@@ -7,7 +7,7 @@ from database import SessionLocal
 from models import DocumentChunk, Document
 
 
-def retrieve(query, category, top_k=10):
+def retrieve(query, category, top_k=20):
 
     store = VectorStore()
 
